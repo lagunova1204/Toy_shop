@@ -1,0 +1,147 @@
+  1)   Используйте команды операционной системы Linux и создайте две новых директории – «Игрушки для школьников» и «Игрушки для дошколят»
+
+
+gb@gb-VirtualBox:~/toy_project$ mkdir Игрушки_для_школьников
+gb@gb-VirtualBox:~/toy_project$ mkdir Игрушки_для_дошколят
+gb@gb-VirtualBox:~/toy_project$ ll
+итого 20
+drwxrwxr-x  4 gb gb 4096 июн 14 13:22 ./
+drwxr-x--- 25 gb gb 4096 июн 14 12:51 ../
+-rw-rw-r--  1 gb gb 1996 июн 14 13:16 toy_project-list.txt
+drwxrwxr-x  2 gb gb 4096 июн 14 13:22 Игрушки_для_дошколят/
+drwxrwxr-x  2 gb gb 4096 июн 14 13:21 Игрушки_для_школьников/
+gb@gb-VirtualBox:~/toy_project$
+
+
+
+
+
+                                  2)   Создайте в директории «Игрушки для школьников» текстовые файлы - «Роботы», «Конструктор», «Настольные игры»
+
+
+
+gb@gb-VirtualBox:~/toy_project$ cd Игрушки_для_школьников
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_школьников$ touch Роботы.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_школьников$ touch Конструктор.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_школьников$ touch Настольные_игры.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_школьников$ tree
+.
+├── Конструктор.txt
+├── Настольные_игры.txt
+└── Роботы.txt
+
+
+0 directories, 3 files
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_школьников$
+
+
+
+
+
+                                   3)    Создайте в директории «Игрушки для дошколят» текстовые файлы «Мягкие игрушки», «Куклы», «Машинки»
+
+
+
+gb@gb-VirtualBox:~/toy_project$ cd Игрушки_для_дошколят
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_дошколят$ touch Мягкие_игрушки.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_дошколят$ touch Куклы.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_дошколят$ touch Машинки.txt
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_дошколят$ tree
+.
+├── Куклы.txt
+├── Машинки.txt
+└── Мягкие_игрушки.txt
+
+0 directories, 3 files
+gb@gb-VirtualBox:~/toy_project/Игрушки_для_дошколят$
+
+
+
+
+
+                                 4)   Объединить 2 директории в одну «Имя Игрушки»
+
+
+b@gb-VirtualBox:~/toy_project$
+gb@gb-VirtualBox:~/toy_project$ mkdir Имя_игрушки
+gb@gb-VirtualBox:~/toy_project$ mv Игрушки_для_школьников/ Игрушки_для_дошколят/ Имя_игрушки
+gb@gb-VirtualBox:~/toy_project$ cd Имя_игрушки
+gb@gb-VirtualBox:~/toy_project/Имя_игрушки$ tree
+.
+├── Игрушки_для_дошколят
+│   ├── Куклы.txt
+│   ├── Машинки.txt
+│   └── Мягкие_игрушки.txt
+└── Игрушки_для_школьников
+    ├── Конструктор.txt
+    ├── Настольные_игры.txt
+    └── Роботы.txt
+
+2 directories, 6 files
+gb@gb-VirtualBox:~/toy_project/Имя_игрушки$
+
+
+
+
+
+                                5)   Переименовать директорию «Имя Игрушки» в «Игрушки»
+
+
+
+gb@gb-VirtualBox:~/toy_project$ mv Имя_игрушки/ Игрушки
+gb@gb-VirtualBox:~/toy_project$ ll
+итого 20
+drwxrwxr-x  3 gb gb 4096 июн 14 14:20 ./
+drwxr-x--- 25 gb gb 4096 июн 14 14:14 ../
+-rw-rw-r--  1 gb gb 4167 июн 14 14:16 toy_project-list.txt
+drwxrwxr-x  4 gb gb 4096 июн 14 14:12 Игрушки/
+gb@gb-VirtualBox:~/toy_project$
+
+
+
+
+
+                                 6)   Просмотреть содержимое каталога «Игрушки».
+
+
+
+b@gb-VirtualBox:~/toy_project$
+gb@gb-VirtualBox:~/toy_project$ cd Игрушки
+gb@gb-VirtualBox:~/toy_project/Игрушки$ tree
+.
+├── Игрушки_для_дошколят
+│   ├── Куклы.txt
+│   ├── Машинки.txt
+│   └── Мягкие_игрушки.txt
+└── Игрушки_для_школьников
+    ├── Конструктор.txt
+    ├── Настольные_игры.txt
+    └── Роботы.txt
+
+2 directories, 6 files
+gb@gb-VirtualBox:~/toy_project/Игрушки$
+
+
+
+
+                                    7)   Установить и удалить snap-пакет. (Любой, какой хотите)
+
+
+b@gb-VirtualBox:~/toy_project$
+gb@gb-VirtualBox:~$ sudo snap install robomongo
+[sudo] пароль для gb:
+robomongo 0.9.0-rc9 от Francesco Banconi (frankban) установлен
+gb@gb-VirtualBox:~$
+gb@gb-VirtualBox:~$ sudo snap remove robomongo
+robomongo удалён
+gb@gb-VirtualBox:~$
+
+
+
+                                  8)   Добавить произвольную задачу для выполнения каждые 3 минуты (Например, запись в текстовый файл чего-то или копирование из каталога А в каталог Б).
+
+
+b@gb-VirtualBox:~$ crontab -l
+
+*/3 * * * * echo "Hi there. It's $(date)" >> ~/toy_project/logs.txt
+gb@gb-VirtualBox:~$
